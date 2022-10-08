@@ -11,19 +11,21 @@ on:
   #     - main
 
 jobs:
-  build:
+  deploy:
+    name: Build & Deploy
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
           submodules: true
-
-      - uses: jakejarvis/hugo-build-action # ...or replace 'master' with a full version tag, such as: v0.64.1
+      - name: Build
+        uses: jakejarvis/hugo-build-action # ...or replace 'master' with a full version tag, such as: v0.64.1
         with:
           args: --minify
-
-      - uses: Azure/static-web-apps-deploy@v1
+      - name: Deploy
+        uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_SKY_06B66E803 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
