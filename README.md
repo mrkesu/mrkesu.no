@@ -2,5 +2,9 @@
 
 Testing out Hugo
 
-## Azure specific configuration
-src/staticwebapp.config.json is used for configuration by Azure: https://learn.microsoft.com/en-us/azure/static-web-apps/configuration
+## Azure specific
+
+| files or settings            | comment                                                                                             |
+| ---------------------------- | --------------------------------------------------------------------------------------------------- |
+| bicep/                       | resource deployment                                                                                 |
+| src/staticwebapp.config.json | Static web app configuration: https://learn.microsoft.com/en-us/azure/static-web-apps/configuration |
