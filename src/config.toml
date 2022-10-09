@@ -1,4 +1,4 @@
-baseURL = "http://mrkesu.no/"
+baseURL = "https://mrkesu.no/"
 title = "Kenneth Sundby"
 theme = "fuji"
 hasCJKLanguage = false
