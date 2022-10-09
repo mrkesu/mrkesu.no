@@ -7,6 +7,8 @@ enableRobotsTXT = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 
+enableGitInfo = true
+
 ## Change this two to switch between different language
 languageCode = "en"           # For RSS, view https://www.rssboard.org/rss-language-codes
 defaultContentLanguage = "en" # For HTML page, now support: en, zh-hans, zh-hant, ja, nl, pl, it
@@ -15,6 +17,12 @@ summaryLength = 100 # Custom summary length, add <!--more--> in post file to cus
 paginate = 10
 
 # googleAnalytics = "UA-000000000-0" # Set your Google Analytics UA here
+
+[frontmatter]
+date = ["date", "publishDate", "lastmod"]
+expiryDate = ["expiryDate"]
+lastmod = ["lastmod", ":git", "date", "publishDate"] # let's me manually set the last modified date, if needed.
+publishDate = ["publishDate", "date"]
 
 [outputFormats]
 [outputFormats.SearchIndex]
