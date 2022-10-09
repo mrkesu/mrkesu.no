@@ -39,7 +39,7 @@ jobs:
 
     - name: Build
       working-directory: ./src
-      run: hugo #--minify --theme=fuji
+      run: hugo -v --minify
 
     - name: Deploy
       uses: Azure/static-web-apps-deploy@v1
