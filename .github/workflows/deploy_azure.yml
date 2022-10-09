@@ -31,6 +31,7 @@ jobs:
           extended: true
 
       - name: Build
+        working-directory: ./src
         run: hugo --minify
 
       - name: Deploy
