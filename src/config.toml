@@ -4,8 +4,8 @@ theme = "fuji"
 hasCJKLanguage = false
 enableEmoji = true
 enableRobotsTXT = true
-#disableKinds = ["taxonomy"]
-#ignoreErrors = ["error-disable-taxonomy"]
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
 
 ## Change this two to switch between different language
 languageCode = "en"           # For RSS, view https://www.rssboard.org/rss-language-codes
