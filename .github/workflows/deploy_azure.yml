@@ -21,7 +21,7 @@ jobs:
 
       - uses: actions/checkout@v3
         with:
-          #submodules: true  # Fetch Hugo themes (true OR recursive)
+          submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Hugo
@@ -41,7 +41,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
           skip_app_build: true
-          app_location: "/public"
+          app_location: "./src/public"
 
   # close_pull_request_job:
   #   if: github.event_name == 'pull_request' && github.event.action == 'closed'
