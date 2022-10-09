@@ -10,6 +10,8 @@ on:
   #   branches:
   #     - main
 
+# implemented some parts from https://zendesk.engineering/a-github-actions-workflow-to-generate-publish-your-hugo-website-f36375e56cf7
+
 jobs:
   deploy:
     name: Build & Deploy
@@ -19,29 +21,34 @@ jobs:
 
     steps:
 
-      - uses: actions/checkout@v3
-        with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        submodules: true  # Fetch Hugo themes (true OR recursive)
+        fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-          extended: true
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+        extended: true
 
-      - name: Build
-        working-directory: ./src
-        run: hugo --minify
+    - name: Clean public directory
+      working-directory: ./src
+      run: rm -rf public
 
-      - name: Deploy
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_SKY_06B66E803 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-          action: "upload"
-          skip_app_build: true
-          app_location: "./src/public"
+    - name: Build
+      working-directory: ./src
+      run: hugo --minify --theme=fuji
+
+    - name: Deploy
+      uses: Azure/static-web-apps-deploy@v1
+      with:
+        azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_SKY_06B66E803 }}
+        repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+        action: "upload"
+        skip_app_build: true
+        app_location: "./src/public"
 
   # close_pull_request_job:
   #   if: github.event_name == 'pull_request' && github.event.action == 'closed'
