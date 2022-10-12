@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "ms-vscode.powershell",
+        "ms-azuretools.vscode-bicep",
+        "bierner.github-markdown-preview",
+        "oderwat.indent-rainbow",
+        "esbenp.prettier-vscode",
+    ]
+}
