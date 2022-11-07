@@ -1,7 +1,7 @@
 ---
 title: "Using GitHub for Intune Proactive Remediations"
 date: 2022-11-05T08:34:00+02:00
-draft: false
+draft: true
 tags: ["intune", "github", "powershell", "yaml", "json"]
 showToc: true
 showLicense: false
