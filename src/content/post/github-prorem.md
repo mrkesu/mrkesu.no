@@ -77,7 +77,9 @@ I don't want to go too in depth with all of the technologies involved, so there 
 
 #### Articles I read at least parts of while coding
 
--   TODO: Get list from Edge tabs
+-   [Creating Intune Proactive Remediation via Powershell](https://andrewstaylor.com/2022/06/20/creating-intune-proactive-remediation-via-powershell/) (by Andrew Taylor)
+-   [Manage Intune Proactive Remediation scripts with PowerShell and Graph](https://www.systanddeploy.com/2020/12/manage-intune-proactive-remediation.html) (by Damien Van Robaeys)
+-   There was one more that I'm forgetting...
 
 #### Documentation references:
 
